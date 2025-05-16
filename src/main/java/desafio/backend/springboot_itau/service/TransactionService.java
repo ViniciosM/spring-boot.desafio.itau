@@ -25,7 +25,7 @@ public class TransactionService {
         OffsetDateTime now = OffsetDateTime.now();
 
         return transactions.stream()
-        //.filter(t -> t.getDateTime().isAfter(now.minusSeconds(60)))
+        .filter(t -> t.getDateTime().isAfter(now.minusSeconds(60)))
         .mapToDouble(Transaction::getValue)
         .summaryStatistics();
     }
